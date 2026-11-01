@@ -1,0 +1,88 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv
+
+# uv
+.uv/
+
+# Poetry (legacy)
+poetry.lock
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# CodeBuddy
+.codebuddy/
+
+# Environment（含密钥，绝不提交；.env.example 为模板）
+.env
+.env.*
+!.env.example
+.env.local
+
+# Logs
+logs/
+*.log
+*.pid
+
+# Database
+*.db
+*.sqlite
+
+# Milvus
+volumes/
+
+# Uploads
+uploads/
+*.tmp
+
+# 公开基准的大体量中间数据（脚本可重新生成）
+eval/public/*.parquet
+eval/public/corpus.jsonl
+eval/public/emb_cache.jsonl
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Pytest
+.pytest_cache/
+.coverage
+htmlcov/
+
+# MyPy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Ruff
+.ruff_cache/
+

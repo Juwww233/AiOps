@@ -1,0 +1,52 @@
+{
+  "meta": {
+    "description": "检索评测集 v2：11 篇文档（含兄弟/干扰文档），查询标注类型 语义|精确词，用于公平对比 dense/hybrid/rerank。",
+    "note": "expected=文件级 gold；type=语义(口语化改写)|精确词(代码/命令/专名)。干扰文档 common_ops_cheatsheet.md 不给任何 gold。",
+    "num_queries": 33,
+    "created": "2026-09-08"
+  },
+  "queries": [
+    {"type": "语义", "question": "CPU使用率一直100%降不下来，应该先从哪里查起", "expected": ["cpu_high_usage.md"]},
+    {"type": "语义", "question": "业务接口明明没人调，CPU却持续偏高，怀疑代码里跑了个死循环", "expected": ["cpu_high_usage.md"]},
+    {"type": "精确词", "question": "用top和vmstat定位CPU负载高的进程", "expected": ["cpu_high_usage.md"]},
+
+    {"type": "语义", "question": "根分区磁盘使用率报警100%，要怎么快速清理腾空间", "expected": ["disk_high_usage.md"]},
+    {"type": "语义", "question": "日志文件把磁盘写满了，该优先清哪些日志", "expected": ["disk_high_usage.md"]},
+    {"type": "精确词", "question": "df -h 看分区占用，再用 du 找具体的大文件", "expected": ["disk_high_usage.md"]},
+
+    {"type": "语义", "question": "内存使用率持续上涨，怀疑有内存泄漏，怎么排查", "expected": ["memory_high_usage.md"]},
+    {"type": "语义", "question": "服务跑几天内存就涨到爆，重启之后又恢复，可能是什么原因", "expected": ["memory_high_usage.md"]},
+
+    {"type": "语义", "question": "线上服务突然不可用了，完整的排查思路是什么", "expected": ["service_unavailable.md"]},
+    {"type": "语义", "question": "应用启动直接崩溃起不来，怎么定位是为什么启动失败", "expected": ["service_unavailable.md"]},
+    {"type": "语义", "question": "数据库连接失败导致整个服务挂掉，该怎么查依赖", "expected": ["service_unavailable.md"]},
+
+    {"type": "语义", "question": "接口响应从100ms退化到3秒，怎么一步步定位瓶颈", "expected": ["slow_response.md"]},
+    {"type": "精确词", "question": "数据库慢查询拖慢了接口响应时间", "expected": ["slow_response.md"]},
+    {"type": "精确词", "question": "调用外部第三方API超时导致整体响应很慢", "expected": ["slow_response.md"]},
+    {"type": "语义", "question": "用户反馈页面打开要转圈很久才出内容", "expected": ["slow_response.md"]},
+
+    {"type": "精确词", "question": "java进程CPU高，用top -H -p找吃CPU的线程再用jstack看线程栈", "expected": ["java_cpu_high.md"]},
+    {"type": "精确词", "question": "Full GC太频繁把Java服务CPU打满，jstat看FGC和FGCT都很高", "expected": ["java_cpu_high.md"]},
+    {"type": "精确词", "question": "jstack里看到线程一直RUNNABLE空转，怀疑热点代码死循环", "expected": ["java_cpu_high.md"]},
+    {"type": "精确词", "question": "top -H -p 得到十进制TID，printf转十六进制后去jstack里匹配nid", "expected": ["java_cpu_high.md"]},
+
+    {"type": "精确词", "question": "Pod反复重启，describe看到Last State是OOMKilled退出码137", "expected": ["pod_oom_killed.md"]},
+    {"type": "精确词", "question": "容器内存超过resources.limits被内核杀掉，事件里Killed", "expected": ["pod_oom_killed.md"]},
+    {"type": "精确词", "question": "kubectl top pod 看实际usage是不是贴到了limit导致被杀", "expected": ["pod_oom_killed.md"]},
+
+    {"type": "精确词", "question": "HikariCP一直报Connection is not available, request timed out", "expected": ["db_connection_pool_full.md"]},
+    {"type": "精确词", "question": "连接池active等于maximum拿不到连接，show processlist看到一堆长事务", "expected": ["db_connection_pool_full.md"]},
+    {"type": "精确词", "question": "jstack看到一堆线程卡在getConnection等连接归还", "expected": ["db_connection_pool_full.md"]},
+
+    {"type": "精确词", "question": "nginx error.log里一直upstream timed out返回504", "expected": ["api_gateway_timeout.md"]},
+    {"type": "精确词", "question": "接口本身要跑很久，但网关proxy_read_timeout设太短被掐断返回504", "expected": ["api_gateway_timeout.md"]},
+    {"type": "语义", "question": "504 Gateway Timeout，TTFB也很长，怎么区分是上游慢还是网络丢包", "expected": ["api_gateway_timeout.md"]},
+
+    {"type": "精确词", "question": "Windows服务器CPU高，用tasklist找w3wp进程看是哪个占满", "expected": ["cpu_high_windows.md"]},
+    {"type": "精确词", "question": "IIS站点CPU打满，任务管理器按CPU排序定位PID再查w3wp", "expected": ["cpu_high_windows.md"]},
+    {"type": "精确词", "question": "用wmic的Win32_PerfFormattedData_PerfProc_Process看哪个进程占CPU", "expected": ["cpu_high_windows.md"]},
+    {"type": "精确词", "question": "w3wp.exe CPU到100%，是不是IIS应用池出问题，怎么查是哪个站点", "expected": ["cpu_high_windows.md"]},
+    {"type": "精确词", "question": "服务器是Windows不是Linux，CPU飙高该用什么工具查进程", "expected": ["cpu_high_windows.md"]}
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "dataset": "T2Retrieval(subset)",
+  "queries": 200,
+  "corpus_size": 10000,
+  "results": {
+    "dense": {
+      "ndcg10": 0.9069,
+      "recall100": 0.9491,
+      "mrr10": 0.949
+    },
+    "sparse": {
+      "ndcg10": 0.7725,
+      "recall100": 0.8751,
+      "mrr10": 0.8773
+    },
+    "hybrid": {
+      "ndcg10": 0.8577,
+      "recall100": 0.9794,
+      "mrr10": 0.9274
+    }
+  }
+}

@@ -1,0 +1,1305 @@
+{
+  "summary": {
+    "all": {
+      "dense": {
+        "hit@1": 0.9091,
+        "hit@3": 0.9697,
+        "hit@5": 1.0,
+        "mrr": 0.9419
+      },
+      "sparse": {
+        "hit@1": 0.697,
+        "hit@3": 0.8788,
+        "hit@5": 0.9697,
+        "mrr": 0.8033
+      },
+      "hybrid": {
+        "hit@1": 0.8182,
+        "hit@3": 0.9697,
+        "hit@5": 1.0,
+        "mrr": 0.8965
+      },
+      "rerank": {
+        "hit@1": 0.9091,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 0.9495
+      }
+    },
+    "语义": {
+      "dense": {
+        "hit@1": 0.9167,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 0.9444
+      },
+      "sparse": {
+        "hit@1": 0.4167,
+        "hit@3": 0.75,
+        "hit@5": 0.9167,
+        "mrr": 0.6091
+      },
+      "hybrid": {
+        "hit@1": 0.6667,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 0.8194
+      },
+      "rerank": {
+        "hit@1": 0.9167,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 0.9583
+      }
+    },
+    "精确词": {
+      "dense": {
+        "hit@1": 0.9048,
+        "hit@3": 0.9524,
+        "hit@5": 1.0,
+        "mrr": 0.9405
+      },
+      "sparse": {
+        "hit@1": 0.8571,
+        "hit@3": 0.9524,
+        "hit@5": 1.0,
+        "mrr": 0.9143
+      },
+      "hybrid": {
+        "hit@1": 0.9048,
+        "hit@3": 0.9524,
+        "hit@5": 1.0,
+        "mrr": 0.9405
+      },
+      "rerank": {
+        "hit@1": 0.9048,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr": 0.9444
+      }
+    }
+  },
+  "detail": [
+    {
+      "q": "CPU使用率一直100%降不下来，应该先从哪里查起",
+      "type": "语义",
+      "expected": [
+        "cpu_high_usage.md"
+      ],
+      "ranks": {
+        "dense": [
+          "cpu_high_windows.md",
+          "java_cpu_high.md",
+          "cpu_high_usage.md",
+          "slow_response.md",
+          "disk_high_usage.md"
+        ],
+        "sparse": [
+          "java_cpu_high.md",
+          "common_ops_cheatsheet.md",
+          "cpu_high_usage.md",
+          "slow_response.md",
+          "db_connection_pool_full.md"
+        ],
+        "hybrid": [
+          "java_cpu_high.md",
+          "cpu_high_usage.md",
+          "cpu_high_windows.md",
+          "common_ops_cheatsheet.md",
+          "slow_response.md"
+        ],
+        "rerank": [
+          "cpu_high_usage.md",
+          "common_ops_cheatsheet.md",
+          "java_cpu_high.md",
+          "cpu_high_windows.md",
+          "slow_response.md"
+        ]
+      }
+    },
+    {
+      "q": "业务接口明明没人调，CPU却持续偏高，怀疑代码里跑了个死循环",
+      "type": "语义",
+      "expected": [
+        "cpu_high_usage.md"
+      ],
+      "ranks": {
+        "dense": [
+          "cpu_high_usage.md",
+          "slow_response.md",
+          "java_cpu_high.md",
+          "cpu_high_windows.md",
+          "service_unavailable.md"
+        ],
+        "sparse": [
+          "java_cpu_high.md",
+          "cpu_high_usage.md",
+          "cpu_high_windows.md",
+          "db_connection_pool_full.md",
+          "pod_oom_killed.md"
+        ],
+        "hybrid": [
+          "cpu_high_usage.md",
+          "java_cpu_high.md",
+          "cpu_high_windows.md",
+          "slow_response.md",
+          "db_connection_pool_full.md"
+        ],
+        "rerank": [
+          "cpu_high_usage.md",
+          "java_cpu_high.md",
+          "slow_response.md",
+          "cpu_high_windows.md",
+          "db_connection_pool_full.md"
+        ]
+      }
+    },
+    {
+      "q": "用top和vmstat定位CPU负载高的进程",
+      "type": "精确词",
+      "expected": [
+        "cpu_high_usage.md"
+      ],
+      "ranks": {
+        "dense": [
+          "common_ops_cheatsheet.md",
+          "cpu_high_windows.md",
+          "java_cpu_high.md",
+          "cpu_high_usage.md",
+          "memory_high_usage.md"
+        ],
+        "sparse": [
+          "cpu_high_windows.md",
+          "java_cpu_high.md",
+          "common_ops_cheatsheet.md",
+          "slow_response.md",
+          "cpu_high_usage.md"
+        ],
+        "hybrid": [
+          "cpu_high_windows.md",
+          "common_ops_cheatsheet.md",
+          "java_cpu_high.md",
+          "cpu_high_usage.md",
+          "slow_response.md"
+        ],
+        "rerank": [
+          "common_ops_cheatsheet.md",
+          "java_cpu_high.md",
+          "cpu_high_usage.md",
+          "cpu_high_windows.md",
+          "slow_response.md"
+        ]
+      }
+    },
+    {
+      "q": "根分区磁盘使用率报警100%，要怎么快速清理腾空间",
+      "type": "语义",
+      "expected": [
+        "disk_high_usage.md"
+      ],
+      "ranks": {
+        "dense": [
+          "disk_high_usage.md",
+          "memory_high_usage.md",
+          "common_ops_cheatsheet.md",
+          "cpu_high_usage.md",
+          "cpu_high_windows.md"
+        ],
+        "sparse": [
+          "disk_high_usage.md",
+          "common_ops_cheatsheet.md",
+          "java_cpu_high.md",
+          "service_unavailable.md",
+          "memory_high_usage.md"
+        ],
+        "hybrid": [
+          "disk_high_usage.md",
+          "common_ops_cheatsheet.md",
+          "java_cpu_high.md",
+          "memory_high_usage.md",
+          "cpu_high_usage.md"
+        ],
+        "rerank": [
+          "disk_high_usage.md",
+          "common_ops_cheatsheet.md",
+          "memory_high_usage.md",
+          "cpu_high_usage.md",
+          "java_cpu_high.md"
+        ]
+      }
+    },
+    {
+      "q": "日志文件把磁盘写满了，该优先清哪些日志",
+      "type": "语义",
+      "expected": [
+        "disk_high_usage.md"
+      ],
+      "ranks": {
+        "dense": [
+          "disk_high_usage.md",
+          "memory_high_usage.md",
+          "cpu_high_usage.md",
+          "service_unavailable.md",
+          "common_ops_cheatsheet.md"
+        ],
+        "sparse": [
+          "pod_oom_killed.md",
+          "common_ops_cheatsheet.md",
+          "cpu_high_windows.md",
+          "disk_high_usage.md",
+          "java_cpu_high.md"
+        ],
+        "hybrid": [
+          "disk_high_usage.md",
+          "common_ops_cheatsheet.md",
+          "cpu_high_windows.md",
+          "memory_high_usage.md",
+          "service_unavailable.md"
+        ],
+        "rerank": [
+          "disk_high_usage.md",
+          "common_ops_cheatsheet.md",
+          "cpu_high_usage.md",
+          "cpu_high_windows.md",
+          "memory_high_usage.md"
+        ]
+      }
+    },
+    {
+      "q": "df -h 看分区占用，再用 du 找具体的大文件",
+      "type": "精确词",
+      "expected": [
+        "disk_high_usage.md"
+      ],
+      "ranks": {
+        "dense": [
+          "common_ops_cheatsheet.md",
+          "disk_high_usage.md",
+          "memory_high_usage.md",
+          "cpu_high_usage.md",
+          "service_unavailable.md"
+        ],
+        "sparse": [
+          "common_ops_cheatsheet.md",
+          "disk_high_usage.md",
+          "pod_oom_killed.md",
+          "db_connection_pool_full.md",
+          "memory_high_usage.md"
+        ],
+        "hybrid": [
+          "common_ops_cheatsheet.md",
+          "disk_high_usage.md",
+          "pod_oom_killed.md",
+          "memory_high_usage.md",
+          "db_connection_pool_full.md"
+        ],
+        "rerank": [
+          "common_ops_cheatsheet.md",
+          "disk_high_usage.md",
+          "pod_oom_killed.md",
+          "memory_high_usage.md",
+          "db_connection_pool_full.md"
+        ]
+      }
+    },
+    {
+      "q": "内存使用率持续上涨，怀疑有内存泄漏，怎么排查",
+      "type": "语义",
+      "expected": [
+        "memory_high_usage.md"
+      ],
+      "ranks": {
+        "dense": [
+          "memory_high_usage.md",
+          "pod_oom_killed.md",
+          "db_connection_pool_full.md",
+          "service_unavailable.md",
+          "disk_high_usage.md"
+        ],
+        "sparse": [
+          "cpu_high_usage.md",
+          "slow_response.md",
+          "memory_high_usage.md",
+          "pod_oom_killed.md",
+          "java_cpu_high.md"
+        ],
+        "hybrid": [
+          "pod_oom_killed.md",
+          "memory_high_usage.md",
+          "java_cpu_high.md",
+          "cpu_high_usage.md",
+          "db_connection_pool_full.md"
+        ],
+        "rerank": [
+          "memory_high_usage.md",
+          "common_ops_cheatsheet.md",
+          "pod_oom_killed.md",
+          "slow_response.md",
+          "java_cpu_high.md"
+        ]
+      }
+    },
+    {
+      "q": "服务跑几天内存就涨到爆，重启之后又恢复，可能是什么原因",
+      "type": "语义",
+      "expected": [
+        "memory_high_usage.md"
+      ],
+      "ranks": {
+        "dense": [
+          "memory_high_usage.md",
+          "cpu_high_usage.md",
+          "slow_response.md",
+          "service_unavailable.md",
+          "pod_oom_killed.md"
+        ],
+        "sparse": [
+          "service_unavailable.md",
+          "cpu_high_usage.md",
+          "api_gateway_timeout.md",
+          "java_cpu_high.md",
+          "pod_oom_killed.md"
+        ],
+        "hybrid": [
+          "cpu_high_usage.md",
+          "service_unavailable.md",
+          "memory_high_usage.md",
+          "pod_oom_killed.md",
+          "slow_response.md"
+        ],
+        "rerank": [
+          "memory_high_usage.md",
+          "pod_oom_killed.md",
+          "cpu_high_usage.md",
+          "service_unavailable.md",
+          "slow_response.md"
+        ]
+      }
+    },
+    {
+      "q": "线上服务突然不可用了，完整的排查思路是什么",
+      "type": "语义",
+      "expected": [
+        "service_unavailable.md"
+      ],
+      "ranks": {
+        "dense": [
+          "service_unavailable.md",
+          "cpu_high_usage.md",
+          "slow_response.md",
+          "disk_high_usage.md",
+          "memory_high_usage.md"
+        ],
+        "sparse": [
+          "service_unavailable.md",
+          "java_cpu_high.md",
+          "cpu_high_windows.md",
+          "pod_oom_killed.md",
+          "db_connection_pool_full.md"
+        ],
+        "hybrid": [
+          "service_unavailable.md",
+          "java_cpu_high.md",
+          "cpu_high_usage.md",
+          "cpu_high_windows.md",
+          "api_gateway_timeout.md"
+        ],
+        "rerank": [
+          "service_unavailable.md",
+          "db_connection_pool_full.md",
+          "api_gateway_timeout.md",
+          "slow_response.md",
+          "cpu_high_usage.md"
+        ]
+      }
+    },
+    {
+      "q": "应用启动直接崩溃起不来，怎么定位是为什么启动失败",
+      "type": "语义",
+      "expected": [
+        "service_unavailable.md"
+      ],
+      "ranks": {
+        "dense": [
+          "service_unavailable.md",
+          "memory_high_usage.md",
+          "cpu_high_usage.md",
+          "slow_response.md",
+          "disk_high_usage.md"
+        ],
+        "sparse": [
+          "service_unavailable.md",
+          "cpu_high_usage.md",
+          "java_cpu_high.md",
+          "disk_high_usage.md",
+          "memory_high_usage.md"
+        ],
+        "hybrid": [
+          "service_unavailable.md",
+          "cpu_high_usage.md",
+          "disk_high_usage.md",
+          "java_cpu_high.md",
+          "memory_high_usage.md"
+        ],
+        "rerank": [
+          "service_unavailable.md",
+          "cpu_high_usage.md",
+          "java_cpu_high.md",
+          "memory_high_usage.md",
+          "disk_high_usage.md"
+        ]
+      }
+    },
+    {
+      "q": "数据库连接失败导致整个服务挂掉，该怎么查依赖",
+      "type": "语义",
+      "expected": [
+        "service_unavailable.md"
+      ],
+      "ranks": {
+        "dense": [
+          "service_unavailable.md",
+          "db_connection_pool_full.md",
+          "slow_response.md",
+          "cpu_high_usage.md",
+          "memory_high_usage.md"
+        ],
+        "sparse": [
+          "service_unavailable.md",
+          "db_connection_pool_full.md",
+          "slow_response.md",
+          "cpu_high_usage.md",
+          "disk_high_usage.md"
+        ],
+        "hybrid": [
+          "service_unavailable.md",
+          "db_connection_pool_full.md",
+          "slow_response.md",
+          "cpu_high_usage.md",
+          "api_gateway_timeout.md"
+        ],
+        "rerank": [
+          "service_unavailable.md",
+          "db_connection_pool_full.md",
+          "slow_response.md",
+          "api_gateway_timeout.md",
+          "cpu_high_usage.md"
+        ]
+      }
+    },
+    {
+      "q": "接口响应从100ms退化到3秒，怎么一步步定位瓶颈",
+      "type": "语义",
+      "expected": [
+        "slow_response.md"
+      ],
+      "ranks": {
+        "dense": [
+          "slow_response.md",
+          "service_unavailable.md",
+          "api_gateway_timeout.md",
+          "cpu_high_usage.md",
+          "java_cpu_high.md"
+        ],
+        "sparse": [
+          "java_cpu_high.md",
+          "slow_response.md",
+          "api_gateway_timeout.md",
+          "memory_high_usage.md",
+          "disk_high_usage.md"
+        ],
+        "hybrid": [
+          "slow_response.md",
+          "api_gateway_timeout.md",
+          "java_cpu_high.md",
+          "cpu_high_usage.md",
+          "memory_high_usage.md"
+        ],
+        "rerank": [
+          "slow_response.md",
+          "api_gateway_timeout.md",
+          "java_cpu_high.md",
+          "cpu_high_usage.md",
+          "memory_high_usage.md"
+        ]
+      }
+    },
+    {
+      "q": "数据库慢查询拖慢了接口响应时间",
+      "type": "精确词",
+      "expected": [
+        "slow_response.md"
+      ],
+      "ranks": {
+        "dense": [
+          "slow_response.md",
+          "db_connection_pool_full.md",
+          "cpu_high_usage.md",
+          "api_gateway_timeout.md",
+          "service_unavailable.md"
+        ],
+        "sparse": [
+          "api_gateway_timeout.md",
+          "slow_response.md",
+          "db_connection_pool_full.md",
+          "cpu_high_usage.md",
+          "service_unavailable.md"
+        ],
+        "hybrid": [
+          "slow_response.md",
+          "api_gateway_timeout.md",
+          "db_connection_pool_full.md",
+          "cpu_high_usage.md",
+          "service_unavailable.md"
+        ],
+        "rerank": [
+          "slow_response.md",
+          "db_connection_pool_full.md",
+          "api_gateway_timeout.md",
+          "cpu_high_usage.md",
+          "service_unavailable.md"
+        ]
+      }
+    },
+    {
+      "q": "调用外部第三方API超时导致整体响应很慢",
+      "type": "精确词",
+      "expected": [
+        "slow_response.md"
+      ],
+      "ranks": {
+        "dense": [
+          "slow_response.md",
+          "api_gateway_timeout.md",
+          "db_connection_pool_full.md",
+          "cpu_high_usage.md",
+          "service_unavailable.md"
+        ],
+        "sparse": [
+          "slow_response.md",
+          "service_unavailable.md",
+          "api_gateway_timeout.md",
+          "cpu_high_windows.md",
+          "java_cpu_high.md"
+        ],
+        "hybrid": [
+          "slow_response.md",
+          "api_gateway_timeout.md",
+          "service_unavailable.md",
+          "java_cpu_high.md",
+          "cpu_high_usage.md"
+        ],
+        "rerank": [
+          "slow_response.md",
+          "api_gateway_timeout.md",
+          "service_unavailable.md",
+          "java_cpu_high.md",
+          "cpu_high_usage.md"
+        ]
+      }
+    },
+    {
+      "q": "用户反馈页面打开要转圈很久才出内容",
+      "type": "语义",
+      "expected": [
+        "slow_response.md"
+      ],
+      "ranks": {
+        "dense": [
+          "slow_response.md",
+          "api_gateway_timeout.md",
+          "cpu_high_usage.md",
+          "service_unavailable.md",
+          "db_connection_pool_full.md"
+        ],
+        "sparse": [
+          "api_gateway_timeout.md",
+          "disk_high_usage.md",
+          "service_unavailable.md",
+          "slow_response.md",
+          "memory_high_usage.md"
+        ],
+        "hybrid": [
+          "api_gateway_timeout.md",
+          "slow_response.md",
+          "service_unavailable.md",
+          "memory_high_usage.md",
+          "disk_high_usage.md"
+        ],
+        "rerank": [
+          "api_gateway_timeout.md",
+          "slow_response.md",
+          "service_unavailable.md",
+          "memory_high_usage.md",
+          "cpu_high_usage.md"
+        ]
+      }
+    },
+    {
+      "q": "java进程CPU高，用top -H -p找吃CPU的线程再用jstack看线程栈",
+      "type": "精确词",
+      "expected": [
+        "java_cpu_high.md"
+      ],
+      "ranks": {
+        "dense": [
+          "java_cpu_high.md",
+          "cpu_high_windows.md",
+          "common_ops_cheatsheet.md",
+          "cpu_high_usage.md",
+          "memory_high_usage.md"
+        ],
+        "sparse": [
+          "java_cpu_high.md",
+          "common_ops_cheatsheet.md",
+          "cpu_high_windows.md",
+          "db_connection_pool_full.md",
+          "pod_oom_killed.md"
+        ],
+        "hybrid": [
+          "java_cpu_high.md",
+          "cpu_high_windows.md",
+          "common_ops_cheatsheet.md",
+          "db_connection_pool_full.md",
+          "cpu_high_usage.md"
+        ],
+        "rerank": [
+          "java_cpu_high.md",
+          "cpu_high_usage.md",
+          "common_ops_cheatsheet.md",
+          "cpu_high_windows.md",
+          "memory_high_usage.md"
+        ]
+      }
+    },
+    {
+      "q": "Full GC太频繁把Java服务CPU打满，jstat看FGC和FGCT都很高",
+      "type": "精确词",
+      "expected": [
+        "java_cpu_high.md"
+      ],
+      "ranks": {
+        "dense": [
+          "java_cpu_high.md",
+          "memory_high_usage.md",
+          "cpu_high_usage.md",
+          "disk_high_usage.md",
+          "slow_response.md"
+        ],
+        "sparse": [
+          "java_cpu_high.md",
+          "pod_oom_killed.md",
+          "memory_high_usage.md",
+          "cpu_high_windows.md",
+          "common_ops_cheatsheet.md"
+        ],
+        "hybrid": [
+          "java_cpu_high.md",
+          "memory_high_usage.md",
+          "pod_oom_killed.md",
+          "cpu_high_usage.md",
+          "slow_response.md"
+        ],
+        "rerank": [
+          "java_cpu_high.md",
+          "memory_high_usage.md",
+          "cpu_high_usage.md",
+          "common_ops_cheatsheet.md",
+          "pod_oom_killed.md"
+        ]
+      }
+    },
+    {
+      "q": "jstack里看到线程一直RUNNABLE空转，怀疑热点代码死循环",
+      "type": "精确词",
+      "expected": [
+        "java_cpu_high.md"
+      ],
+      "ranks": {
+        "dense": [
+          "java_cpu_high.md",
+          "db_connection_pool_full.md",
+          "memory_high_usage.md",
+          "slow_response.md",
+          "cpu_high_usage.md"
+        ],
+        "sparse": [
+          "java_cpu_high.md",
+          "cpu_high_windows.md",
+          "db_connection_pool_full.md",
+          "cpu_high_usage.md",
+          "slow_response.md"
+        ],
+        "hybrid": [
+          "java_cpu_high.md",
+          "db_connection_pool_full.md",
+          "cpu_high_windows.md",
+          "cpu_high_usage.md",
+          "slow_response.md"
+        ],
+        "rerank": [
+          "java_cpu_high.md",
+          "cpu_high_usage.md",
+          "slow_response.md",
+          "db_connection_pool_full.md",
+          "memory_high_usage.md"
+        ]
+      }
+    },
+    {
+      "q": "top -H -p 得到十进制TID，printf转十六进制后去jstack里匹配nid",
+      "type": "精确词",
+      "expected": [
+        "java_cpu_high.md"
+      ],
+      "ranks": {
+        "dense": [
+          "java_cpu_high.md",
+          "common_ops_cheatsheet.md",
+          "memory_high_usage.md",
+          "cpu_high_usage.md",
+          "service_unavailable.md"
+        ],
+        "sparse": [
+          "java_cpu_high.md",
+          "db_connection_pool_full.md",
+          "pod_oom_killed.md",
+          "api_gateway_timeout.md",
+          "cpu_high_windows.md"
+        ],
+        "hybrid": [
+          "java_cpu_high.md",
+          "common_ops_cheatsheet.md",
+          "db_connection_pool_full.md",
+          "cpu_high_windows.md",
+          "pod_oom_killed.md"
+        ],
+        "rerank": [
+          "java_cpu_high.md",
+          "common_ops_cheatsheet.md",
+          "cpu_high_usage.md",
+          "cpu_high_windows.md",
+          "db_connection_pool_full.md"
+        ]
+      }
+    },
+    {
+      "q": "Pod反复重启，describe看到Last State是OOMKilled退出码137",
+      "type": "精确词",
+      "expected": [
+        "pod_oom_killed.md"
+      ],
+      "ranks": {
+        "dense": [
+          "pod_oom_killed.md",
+          "service_unavailable.md",
+          "memory_high_usage.md",
+          "cpu_high_usage.md",
+          "java_cpu_high.md"
+        ],
+        "sparse": [
+          "pod_oom_killed.md",
+          "java_cpu_high.md",
+          "api_gateway_timeout.md",
+          "cpu_high_usage.md",
+          "cpu_high_windows.md"
+        ],
+        "hybrid": [
+          "pod_oom_killed.md",
+          "java_cpu_high.md",
+          "cpu_high_usage.md",
+          "service_unavailable.md",
+          "memory_high_usage.md"
+        ],
+        "rerank": [
+          "pod_oom_killed.md",
+          "memory_high_usage.md",
+          "service_unavailable.md",
+          "cpu_high_usage.md",
+          "java_cpu_high.md"
+        ]
+      }
+    },
+    {
+      "q": "容器内存超过resources.limits被内核杀掉，事件里Killed",
+      "type": "精确词",
+      "expected": [
+        "pod_oom_killed.md"
+      ],
+      "ranks": {
+        "dense": [
+          "pod_oom_killed.md",
+          "memory_high_usage.md",
+          "cpu_high_usage.md",
+          "service_unavailable.md",
+          "disk_high_usage.md"
+        ],
+        "sparse": [
+          "pod_oom_killed.md",
+          "db_connection_pool_full.md",
+          "api_gateway_timeout.md",
+          "memory_high_usage.md",
+          "java_cpu_high.md"
+        ],
+        "hybrid": [
+          "pod_oom_killed.md",
+          "memory_high_usage.md",
+          "cpu_high_usage.md",
+          "disk_high_usage.md",
+          "service_unavailable.md"
+        ],
+        "rerank": [
+          "pod_oom_killed.md",
+          "memory_high_usage.md",
+          "service_unavailable.md",
+          "cpu_high_usage.md",
+          "disk_high_usage.md"
+        ]
+      }
+    },
+    {
+      "q": "kubectl top pod 看实际usage是不是贴到了limit导致被杀",
+      "type": "精确词",
+      "expected": [
+        "pod_oom_killed.md"
+      ],
+      "ranks": {
+        "dense": [
+          "pod_oom_killed.md",
+          "common_ops_cheatsheet.md",
+          "cpu_high_usage.md",
+          "memory_high_usage.md",
+          "disk_high_usage.md"
+        ],
+        "sparse": [
+          "pod_oom_killed.md",
+          "java_cpu_high.md",
+          "db_connection_pool_full.md",
+          "common_ops_cheatsheet.md",
+          "api_gateway_timeout.md"
+        ],
+        "hybrid": [
+          "pod_oom_killed.md",
+          "common_ops_cheatsheet.md",
+          "memory_high_usage.md",
+          "java_cpu_high.md",
+          "cpu_high_usage.md"
+        ],
+        "rerank": [
+          "pod_oom_killed.md",
+          "memory_high_usage.md",
+          "common_ops_cheatsheet.md",
+          "cpu_high_usage.md",
+          "java_cpu_high.md"
+        ]
+      }
+    },
+    {
+      "q": "HikariCP一直报Connection is not available, request timed out",
+      "type": "精确词",
+      "expected": [
+        "db_connection_pool_full.md"
+      ],
+      "ranks": {
+        "dense": [
+          "db_connection_pool_full.md",
+          "slow_response.md",
+          "cpu_high_usage.md",
+          "service_unavailable.md",
+          "memory_high_usage.md"
+        ],
+        "sparse": [
+          "db_connection_pool_full.md",
+          "api_gateway_timeout.md",
+          "slow_response.md",
+          "service_unavailable.md",
+          "cpu_high_windows.md"
+        ],
+        "hybrid": [
+          "db_connection_pool_full.md",
+          "slow_response.md",
+          "service_unavailable.md",
+          "api_gateway_timeout.md",
+          "memory_high_usage.md"
+        ],
+        "rerank": [
+          "db_connection_pool_full.md",
+          "slow_response.md",
+          "service_unavailable.md",
+          "api_gateway_timeout.md",
+          "memory_high_usage.md"
+        ]
+      }
+    },
+    {
+      "q": "连接池active等于maximum拿不到连接，show processlist看到一堆长事务",
+      "type": "精确词",
+      "expected": [
+        "db_connection_pool_full.md"
+      ],
+      "ranks": {
+        "dense": [
+          "db_connection_pool_full.md",
+          "cpu_high_usage.md",
+          "slow_response.md",
+          "memory_high_usage.md",
+          "service_unavailable.md"
+        ],
+        "sparse": [
+          "db_connection_pool_full.md",
+          "pod_oom_killed.md",
+          "slow_response.md",
+          "service_unavailable.md",
+          "api_gateway_timeout.md"
+        ],
+        "hybrid": [
+          "db_connection_pool_full.md",
+          "slow_response.md",
+          "cpu_high_usage.md",
+          "service_unavailable.md",
+          "api_gateway_timeout.md"
+        ],
+        "rerank": [
+          "db_connection_pool_full.md",
+          "slow_response.md",
+          "service_unavailable.md",
+          "api_gateway_timeout.md",
+          "cpu_high_usage.md"
+        ]
+      }
+    },
+    {
+      "q": "jstack看到一堆线程卡在getConnection等连接归还",
+      "type": "精确词",
+      "expected": [
+        "db_connection_pool_full.md"
+      ],
+      "ranks": {
+        "dense": [
+          "db_connection_pool_full.md",
+          "java_cpu_high.md",
+          "memory_high_usage.md",
+          "slow_response.md",
+          "service_unavailable.md"
+        ],
+        "sparse": [
+          "db_connection_pool_full.md",
+          "java_cpu_high.md",
+          "api_gateway_timeout.md",
+          "pod_oom_killed.md",
+          "service_unavailable.md"
+        ],
+        "hybrid": [
+          "db_connection_pool_full.md",
+          "java_cpu_high.md",
+          "service_unavailable.md",
+          "memory_high_usage.md",
+          "slow_response.md"
+        ],
+        "rerank": [
+          "db_connection_pool_full.md",
+          "slow_response.md",
+          "java_cpu_high.md",
+          "service_unavailable.md",
+          "memory_high_usage.md"
+        ]
+      }
+    },
+    {
+      "q": "nginx error.log里一直upstream timed out返回504",
+      "type": "精确词",
+      "expected": [
+        "api_gateway_timeout.md"
+      ],
+      "ranks": {
+        "dense": [
+          "api_gateway_timeout.md",
+          "slow_response.md",
+          "service_unavailable.md",
+          "cpu_high_usage.md",
+          "db_connection_pool_full.md"
+        ],
+        "sparse": [
+          "api_gateway_timeout.md",
+          "common_ops_cheatsheet.md",
+          "db_connection_pool_full.md",
+          "disk_high_usage.md",
+          "pod_oom_killed.md"
+        ],
+        "hybrid": [
+          "api_gateway_timeout.md",
+          "db_connection_pool_full.md",
+          "slow_response.md",
+          "service_unavailable.md",
+          "disk_high_usage.md"
+        ],
+        "rerank": [
+          "api_gateway_timeout.md",
+          "slow_response.md",
+          "service_unavailable.md",
+          "db_connection_pool_full.md",
+          "cpu_high_usage.md"
+        ]
+      }
+    },
+    {
+      "q": "接口本身要跑很久，但网关proxy_read_timeout设太短被掐断返回504",
+      "type": "精确词",
+      "expected": [
+        "api_gateway_timeout.md"
+      ],
+      "ranks": {
+        "dense": [
+          "api_gateway_timeout.md",
+          "slow_response.md",
+          "service_unavailable.md",
+          "db_connection_pool_full.md",
+          "cpu_high_usage.md"
+        ],
+        "sparse": [
+          "api_gateway_timeout.md",
+          "cpu_high_windows.md",
+          "pod_oom_killed.md",
+          "db_connection_pool_full.md",
+          "java_cpu_high.md"
+        ],
+        "hybrid": [
+          "api_gateway_timeout.md",
+          "db_connection_pool_full.md",
+          "service_unavailable.md",
+          "slow_response.md",
+          "java_cpu_high.md"
+        ],
+        "rerank": [
+          "api_gateway_timeout.md",
+          "slow_response.md",
+          "db_connection_pool_full.md",
+          "service_unavailable.md",
+          "java_cpu_high.md"
+        ]
+      }
+    },
+    {
+      "q": "504 Gateway Timeout，TTFB也很长，怎么区分是上游慢还是网络丢包",
+      "type": "语义",
+      "expected": [
+        "api_gateway_timeout.md"
+      ],
+      "ranks": {
+        "dense": [
+          "api_gateway_timeout.md",
+          "slow_response.md",
+          "service_unavailable.md",
+          "cpu_high_usage.md",
+          "db_connection_pool_full.md"
+        ],
+        "sparse": [
+          "api_gateway_timeout.md",
+          "slow_response.md",
+          "cpu_high_usage.md",
+          "java_cpu_high.md",
+          "service_unavailable.md"
+        ],
+        "hybrid": [
+          "api_gateway_timeout.md",
+          "slow_response.md",
+          "cpu_high_usage.md",
+          "service_unavailable.md",
+          "db_connection_pool_full.md"
+        ],
+        "rerank": [
+          "api_gateway_timeout.md",
+          "slow_response.md",
+          "cpu_high_usage.md",
+          "service_unavailable.md",
+          "db_connection_pool_full.md"
+        ]
+      }
+    },
+    {
+      "q": "Windows服务器CPU高，用tasklist找w3wp进程看是哪个占满",
+      "type": "精确词",
+      "expected": [
+        "cpu_high_windows.md"
+      ],
+      "ranks": {
+        "dense": [
+          "cpu_high_windows.md",
+          "common_ops_cheatsheet.md",
+          "cpu_high_usage.md",
+          "java_cpu_high.md",
+          "disk_high_usage.md"
+        ],
+        "sparse": [
+          "cpu_high_windows.md",
+          "java_cpu_high.md",
+          "common_ops_cheatsheet.md",
+          "cpu_high_usage.md",
+          "db_connection_pool_full.md"
+        ],
+        "hybrid": [
+          "cpu_high_windows.md",
+          "common_ops_cheatsheet.md",
+          "java_cpu_high.md",
+          "cpu_high_usage.md",
+          "memory_high_usage.md"
+        ],
+        "rerank": [
+          "cpu_high_windows.md",
+          "cpu_high_usage.md",
+          "java_cpu_high.md",
+          "common_ops_cheatsheet.md",
+          "memory_high_usage.md"
+        ]
+      }
+    },
+    {
+      "q": "IIS站点CPU打满，任务管理器按CPU排序定位PID再查w3wp",
+      "type": "精确词",
+      "expected": [
+        "cpu_high_windows.md"
+      ],
+      "ranks": {
+        "dense": [
+          "cpu_high_windows.md",
+          "java_cpu_high.md",
+          "cpu_high_usage.md",
+          "common_ops_cheatsheet.md",
+          "service_unavailable.md"
+        ],
+        "sparse": [
+          "cpu_high_windows.md",
+          "java_cpu_high.md",
+          "common_ops_cheatsheet.md",
+          "disk_high_usage.md",
+          "cpu_high_usage.md"
+        ],
+        "hybrid": [
+          "cpu_high_windows.md",
+          "java_cpu_high.md",
+          "common_ops_cheatsheet.md",
+          "cpu_high_usage.md",
+          "disk_high_usage.md"
+        ],
+        "rerank": [
+          "cpu_high_windows.md",
+          "cpu_high_usage.md",
+          "java_cpu_high.md",
+          "common_ops_cheatsheet.md",
+          "slow_response.md"
+        ]
+      }
+    },
+    {
+      "q": "用wmic的Win32_PerfFormattedData_PerfProc_Process看哪个进程占CPU",
+      "type": "精确词",
+      "expected": [
+        "cpu_high_windows.md"
+      ],
+      "ranks": {
+        "dense": [
+          "cpu_high_windows.md",
+          "common_ops_cheatsheet.md",
+          "java_cpu_high.md",
+          "cpu_high_usage.md",
+          "memory_high_usage.md"
+        ],
+        "sparse": [
+          "cpu_high_windows.md",
+          "java_cpu_high.md",
+          "api_gateway_timeout.md",
+          "db_connection_pool_full.md",
+          "cpu_high_usage.md"
+        ],
+        "hybrid": [
+          "cpu_high_windows.md",
+          "java_cpu_high.md",
+          "common_ops_cheatsheet.md",
+          "cpu_high_usage.md",
+          "disk_high_usage.md"
+        ],
+        "rerank": [
+          "cpu_high_windows.md",
+          "java_cpu_high.md",
+          "common_ops_cheatsheet.md",
+          "cpu_high_usage.md",
+          "disk_high_usage.md"
+        ]
+      }
+    },
+    {
+      "q": "w3wp.exe CPU到100%，是不是IIS应用池出问题，怎么查是哪个站点",
+      "type": "精确词",
+      "expected": [
+        "cpu_high_windows.md"
+      ],
+      "ranks": {
+        "dense": [
+          "cpu_high_windows.md",
+          "cpu_high_usage.md",
+          "slow_response.md",
+          "service_unavailable.md",
+          "common_ops_cheatsheet.md"
+        ],
+        "sparse": [
+          "cpu_high_windows.md",
+          "java_cpu_high.md",
+          "cpu_high_usage.md",
+          "api_gateway_timeout.md",
+          "pod_oom_killed.md"
+        ],
+        "hybrid": [
+          "cpu_high_windows.md",
+          "cpu_high_usage.md",
+          "java_cpu_high.md",
+          "common_ops_cheatsheet.md",
+          "slow_response.md"
+        ],
+        "rerank": [
+          "cpu_high_windows.md",
+          "cpu_high_usage.md",
+          "java_cpu_high.md",
+          "slow_response.md",
+          "common_ops_cheatsheet.md"
+        ]
+      }
+    },
+    {
+      "q": "服务器是Windows不是Linux，CPU飙高该用什么工具查进程",
+      "type": "精确词",
+      "expected": [
+        "cpu_high_windows.md"
+      ],
+      "ranks": {
+        "dense": [
+          "cpu_high_windows.md",
+          "common_ops_cheatsheet.md",
+          "cpu_high_usage.md",
+          "java_cpu_high.md",
+          "disk_high_usage.md"
+        ],
+        "sparse": [
+          "cpu_high_windows.md",
+          "cpu_high_usage.md",
+          "java_cpu_high.md",
+          "common_ops_cheatsheet.md",
+          "memory_high_usage.md"
+        ],
+        "hybrid": [
+          "cpu_high_windows.md",
+          "java_cpu_high.md",
+          "common_ops_cheatsheet.md",
+          "cpu_high_usage.md",
+          "memory_high_usage.md"
+        ],
+        "rerank": [
+          "cpu_high_windows.md",
+          "cpu_high_usage.md",
+          "common_ops_cheatsheet.md",
+          "java_cpu_high.md",
+          "service_unavailable.md"
+        ]
+      }
+    }
+  ]
+}
